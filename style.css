@@ -140,12 +140,18 @@ body {
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
-}
+  
+  }
 .about {
-  max-width: 680px;
-  margin: auto;
-  font-size: 15px;
+  max-width: 480px; /* يجعل السطور قصيرة ومتوازنة */
+  margin: 40px auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.8; /* يجعل الفواصل بين السطور متساوية */
+  font-weight: 400;
   letter-spacing: 0.3px;
+  direction: rtl;
+  padding: 0 15px;
 }
 
 .prev { left: 20px; }
