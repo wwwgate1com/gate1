@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GATE1</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="brand">GATE1</div>
+  <div class="lang-switch">
+    <button onclick="setLang('ar')">AR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+</header>
+<section class="about">
+  <p 
+    data-ar="GATE1 ليس متجرًا.
+هو مساحة اختيار.
+نؤمن أن القطعة الجيدة لا تحتاج إلى صراخ،
+بل إلى حضور.
+
+في GATE1 نختار عددًا محدودًا من القطع،
+بعناية، وبذوق،
+لأن ما يمر من هذه البوابة
+يجب أن يستحق العبور."
+    
+    data-en="GATE1 is not a store.
+It’s a selection.
+
+We believe great pieces don’t ask for attention —
+they earn it.
+
+Every item here is carefully chosen,
+limited by intention,
+and only what deserves to pass
+makes it through the gate."
+  ></p>
+</section>
+
+
+  <!-- Sweater Drop -->
+  <div class="drop">
+    <h2>SWEATER DROP</h2>
+    <span class="drop-date">DROP 01</span>
+
+    <div class="grid">
+      <div class="card" onclick="openLightbox(['images/h3.jpg','images/h4.jpg','images/h1.jpg'])">
+        <img src="images/h4.jpg" />
+        <div class="sizes">S · M · L · XL</div>
+      </div>
+
+      <div class="card" onclick="openLightbox(['images/h3.jpg','images/h4.jpg','images/h1.jpg'])">
+        <img src="images/h3.jpg" />
+        <div class="sizes">M · L · XL</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hoodie Drop -->
+  <div class="drop">
+    <h2>HOODIE DROP</h2>
+    <span class="drop-date">DROP 01</span>
+
+    <div class="grid">
+      <div class="card" onclick="openLightbox(['images/h3.jpg','images/h4.jpg','images/h1.jpg'])">
+        <img src="images/h1.jpg" />
+        <div class="sizes">M · L · XL · XXL</div>
+      </div>
+
+      <div class="card" onclick="openLightbox(['images/h3.jpg','images/h4.jpg','images/h1.jpg'])">
+        <img src="images/h2.jpg" />
+        <div class="sizes">S · M · L</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- DROP -->
+<section class="category">
+  <h2 data-ar="Latest Drop" data-en="Latest Drop"></h2>
+
+  <div class="grid">
+
+    <div class="card" onclick="openLightbox(['images/h1.jpg','images/h2.jpg','images/h3.jpg'])">
+      <img src="images/h1.jpg" />
+      <div class="sizes">
+        <span>S</span><span>M</span><span>L</span><span>XL</span>
+      </div>
+    </div>
+
+    <div class="card" onclick="openLightbox(['images/h2.jpg','images/h3.jpg','images/h4.jpg'])">
+      <img src="images/h2.jpg" />
+      <div class="sizes">
+        <span>S</span><span>M</span><span>L</span>
+      </div>
+    </div>
+
+    <div class="card" onclick="openLightbox(['images/h3.jpg','images/h4.jpg','images/h1.jpg'])">
+      <img src="images/h3.jpg" />
+      <div class="sizes">
+        <span>M</span><span>L</span><span>XL</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about">
+  <p data-ar="
+2025
+"
+data-en="
+2025
+"></p>
+</section>
+<footer class="footer">
+  <a href="https://www.instagram.com/hayaliomr" target="_blank">
+    Instagram → @hayaliomr
+  </a>
+
+  <a 
+    href="https://wa.me/9647886469297" 
+    target="_blank"
+    class="order-btn"
+  >
+    Direct Order → WhatsApp
+  </a>
+</footer>
+
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="nav prev" onclick="event.stopPropagation(); prevImage()">❮</span>
+  <img src="" />
+  <span class="nav next" onclick="event.stopPropagation(); nextImage()">❯</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
