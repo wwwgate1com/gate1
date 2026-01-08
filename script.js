@@ -19,6 +19,7 @@ let index = 0;
 function openLightbox(arr) {
   images = arr;
   index = 0;
+  renderDots();
   showImage();
 }
 
@@ -26,6 +27,7 @@ function showImage() {
   const lb = document.getElementById('lightbox');
   lb.style.display = 'flex';
   lb.querySelector('img').src = images[index];
+  updateDots();
 }
 
 function closeLightbox() {
@@ -42,7 +44,24 @@ function prevImage() {
   showImage();
 }
 
-/* SWIPE (iPhone feel) */
+/* DOTS */
+function renderDots() {
+  const dots = document.querySelector('.dots');
+  dots.innerHTML = '';
+  images.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    dots.appendChild(d);
+  });
+}
+
+function updateDots() {
+  document.querySelectorAll('.dot').forEach((d, i) => {
+    d.classList.toggle('active', i === index);
+  });
+}
+
+/* SWIPE */
 let startX = 0;
 const lb = document.getElementById('lightbox');
 
@@ -57,3 +76,38 @@ lb.addEventListener('touchend', e => {
 });
 
 applyLang();
+/* ===== LOCK SCROLL ===== */
+function openLightbox(arr) {
+  images = arr;
+  index = 0;
+  document.body.classList.add('lock-scroll');
+  renderDots();
+  showImage();
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.classList.remove('lock-scroll');
+}
+
+/* ===== MOUSE SWIPE (DESKTOP) ===== */
+let mouseDown = false;
+let mouseStartX = 0;
+
+lb.addEventListener('mousedown', e => {
+  mouseDown = true;
+  mouseStartX = e.clientX;
+});
+
+lb.addEventListener('mouseup', e => {
+  if (!mouseDown) return;
+  let mouseEndX = e.clientX;
+  mouseDown = false;
+
+  if (mouseStartX - mouseEndX > 50) nextImage();
+  if (mouseEndX - mouseStartX > 50) prevImage();
+});
+
+lb.addEventListener('mouseleave', () => {
+  mouseDown = false;
+});
