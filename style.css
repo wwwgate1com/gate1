@@ -43,6 +43,23 @@ body {
   line-height: 1.8;
   padding: 0 15px;
 }
+.dots {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+}
+
+.dot.active {
+  background: #fff;
+}
 
 /* Grid */
 .grid {
@@ -93,8 +110,22 @@ body {
   border-radius: 20px;
   background: rgba(255,255,255,0.6);
 }
+.sizes span.disabled {
+  position: relative;
+  opacity: 0.35;
+}
 
-/* Lightbox */
+.sizes span.disabled::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  right: -5px;
+  height: 2px;
+  background: red;
+  transform: rotate(-10deg);
+}
+
 #lightbox {
   position: fixed;
   inset: 0;
@@ -102,7 +133,25 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
+
+.lightbox-frame {
+  width: 90%;
+  max-width: 420px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#lightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
 
 #lightbox img {
   max-width: 90%;

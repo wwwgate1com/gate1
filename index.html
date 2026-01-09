@@ -43,6 +43,12 @@
     </div>
   </div>
 </div>
+<div class="sizes">
+  <span>S</span>
+  <span>M</span>
+  <span>L</span>
+  <span class="disabled">3XL</span>
+</div>
 
 <!-- Hoodie Drop -->
 <div class="drop">
@@ -83,20 +89,22 @@
   </div>
 </section>
 
-<section class="about">
-  <p data-ar="2025" data-en="2025"></p>
-</section>
 
 <footer class="footer">
   <a href="https://www.instagram.com/hayaliomr" target="_blank">Instagram → @hayaliomr</a>
   <a href="https://wa.me/9647886469297" target="_blank" class="order-btn">Direct Order → WhatsApp</a>
 </footer>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
   <span class="nav prev" onclick="event.stopPropagation(); prevImage()">❮</span>
-  <img src="" alt="">
+
+  <div class="lightbox-frame">
+    <img src="" />
+  </div>
+
   <span class="nav next" onclick="event.stopPropagation(); nextImage()">❯</span>
+
+  <div class="dots"></div>
 </div>
 
 <script src="script.js"></script>
