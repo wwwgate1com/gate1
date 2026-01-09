@@ -95,14 +95,17 @@
   <a href="https://wa.me/9647886469297" target="_blank" class="order-btn">Direct Order → WhatsApp</a>
 </footer>
 
-<div id="lightbox" onclick="closeLightbox()">
+<div id="lightbox">
   <span class="nav prev" onclick="event.stopPropagation(); prevImage()">❮</span>
 
-  <div class="lightbox-frame">
+  <div class="lightbox-frame" onclick="event.stopPropagation()">
     <img src="" />
   </div>
 
   <span class="nav next" onclick="event.stopPropagation(); nextImage()">❯</span>
+
+  <!-- زر الإغلاق -->
+  <button class="close-lightbox" onclick="closeLightbox()">✕</button>
 
   <div class="dots"></div>
 </div>
